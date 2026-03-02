@@ -10,7 +10,7 @@
  <h1> Fundamentos do PHP com POO - Exemplo 1 </h1>
 
  <?php
- require_once 'item.inc.php';
+ require_once 'Item.inc.php';
 
  // Criar um objeto Item
  $item = new Item();
