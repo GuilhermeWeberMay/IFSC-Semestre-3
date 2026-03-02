@@ -10,7 +10,7 @@
  <h1> Fundamentos do PHP com POO - Exemplo 2 </h1>
 
  <?php
- require_once 'exerc2.inc.php';
+ require_once 'Curso.inc.php';
 
  // Criar um objeto Item
  $objCurso1 = new Curso("Gestão da tecnologia da Informação", 6);
