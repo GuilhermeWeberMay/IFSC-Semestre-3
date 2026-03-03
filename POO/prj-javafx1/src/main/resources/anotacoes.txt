@@ -1,0 +1,2 @@
+- Containers são a base
+- Tem o grid painel que pode ser mais facilmente pois tem divisões

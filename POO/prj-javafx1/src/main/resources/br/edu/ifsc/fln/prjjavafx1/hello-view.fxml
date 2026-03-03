@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="261.0" prefWidth="240.0" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsc.fln.prjjavafx1.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <CheckBox fx:id="cbAbilitarEntrada" mnemonicParsing="false" onAction="#cbAbilitarEntradaOnAction" text="Opção" />
+   <TextField fx:id="tfNome" editable="false" />
+   <TextField fx:id="tfSobrenome" />
+   <TextField fx:id="tfIdade" promptText="Idade" />
+   <Label fx:id="lbNomeCompleto" />
+   <Button mnemonicParsing="false" onAction="#btOnAction" text="Enviar" />
+   <Button mnemonicParsing="false" onAction="#btOnLimpar" text="Limpar" />
+</VBox>
