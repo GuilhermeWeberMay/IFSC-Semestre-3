@@ -40,7 +40,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="141.0" layoutY="336.0" mnemonicParsing="false" onAction="#btCalcularOnClick" text="Calcular" />
-      <Button layoutX="200.0" layoutY="336.0" mnemonicParsing="false" onAction="#btNovoImcOnClick" text="Novo" />
+      <Button layoutX="74.0" layoutY="336.0" mnemonicParsing="false" onAction="#btCalcularOnClick" prefHeight="26.0" prefWidth="125.0" text="Calcular" />
+      <Button layoutX="200.0" layoutY="336.0" mnemonicParsing="false" onAction="#btNovoImcOnClick" prefHeight="26.0" prefWidth="126.0" text="Novo" />
    </children>
 </AnchorPane>

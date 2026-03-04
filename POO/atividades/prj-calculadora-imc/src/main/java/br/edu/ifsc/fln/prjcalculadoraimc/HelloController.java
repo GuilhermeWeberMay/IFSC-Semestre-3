@@ -35,11 +35,11 @@ public class HelloController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("CALCULADORA IMC");
         alert.setHeaderText("Seu resultado!");
-        alert.setContentText("Nome:   " + tfNome.getText()   + "\n" +
-                             "Idade:  " + tfIdade.getText()  + "\n" +
-                             "Altura: " + tfAltura.getText() + "\n" +
-                             "Peso:   " + tfPeso.getText()   + "\n\n" +
-                             "IMC:    " + formatada          + "\n" +
+        alert.setContentText("Nome       : " + tfNome.getText()   + "\n" +
+                             "Idade        : " + tfIdade.getText()  + "\n" +
+                             "Altura       : " + tfAltura.getText() + "\n" +
+                             "Peso         : " + tfPeso.getText()   + "\n\n" +
+                             "IMC              : " + formatada          + "\n" +
                              "Classificação: " + classificacaoImc);
     alert.showAndWait();
     }
