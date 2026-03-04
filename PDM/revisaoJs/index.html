@@ -11,7 +11,7 @@
  <h1 id="tit">Título</h1>
  <p class="paragrafo"> 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam accusamus quia, eius autem facere. Repudiandae soluta et rem, provident quia quisquam quaerat laboriosam nihil eos cumque, dolorum eum sit.</p>
  <p class="paragrafo"> 2 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore alias quis, facere sequi hic dolorum doloremque voluptatum porro et facilis modi ratione quae ea veniam rem dignissimos culpa at officiis?</p>
- <p class="paragrafo"> 3 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum maiores doloremque, repudiandae qui temporibus ratione excepturi aut reprehenderit quas facilis eveniet labore sit nihil rerum hic blanditiis voluptatibus atque quod?</p>
+ <p class="paragrafo"> 3 - Lorem ipsum dolor sit amet <i>consectetur adipisicing elit. Illum maiores doloremque, repudiandae qui temporibus ratione excepturi aut reprehenderit quas facilis eveniet labore sit nihil </i>rerum hic blanditiis voluptatibus atque quod?</p>
  <p class="paragrafo"> 4 - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolorem minima nobis fuga amet excepturi ab a quod tempora! Laborum dolorum assumenda hic ea vero quaerat eum ex, accusantium voluptas?</p>
 
  <textarea id="saida"></textarea>
@@ -36,8 +36,10 @@
  let pc = document.querySelectorAll(".paragrafo") // Colocar . para procurar classes igual no CSS
  saida.innerHTML += "Agora com um laço ForEach \n\n"
  pc.forEach(element => {
-  saida.innerHTML += element.innerHTML + "\n\n"
+  saida.innerHTML += element.textContent + "\n\n"
  });
+
+ ps[3].innerHTML = ps[0].innerHTML + "<p> Estou testando pegar um paragrado e colocar eu outro </p>"
  </script>
 </body>
 </html>
