@@ -7,10 +7,11 @@
  <meta name='viewport' content='width=device-width, initial-scale=1'>
  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
  <script src='main.js'></script>
+ <!-- Se colocar o script no head ele não pode alterar nada, pois a pagina ainda não carregou as tags HTML-->
 </head>
 <body>
  <h1>Título</h1>
-
+<!-- E se colocar antes do último body ele consegue alterar pois ja carregou a página inteira-->
  <script>
   let hs = document.getElementsByTagName('h1')
   document.body.innerHTML += hs[0].innerHTML
