@@ -1,2 +1,0 @@
-// var na criação de variáveis - mas antigas e não tinham escopo e usar em qualquer lugar do código e em outras partes.
-// let na criação de variáveis - só pode ser usada dentro do proprio arquivo criado

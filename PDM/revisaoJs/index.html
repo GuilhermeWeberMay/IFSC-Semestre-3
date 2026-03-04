@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
  <meta charset='utf-8'>
  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -7,39 +8,50 @@
  <meta name='viewport' content='width=device-width, initial-scale=1'>
  <!-- Se colocar o script no head ele não pode alterar nada, pois a pagina ainda não carregou as tags HTML-->
 </head>
+
 <body>
  <h1 id="tit">Título</h1>
- <p class="paragrafo"> 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam accusamus quia, eius autem facere. Repudiandae soluta et rem, provident quia quisquam quaerat laboriosam nihil eos cumque, dolorum eum sit.</p>
- <p class="paragrafo"> 2 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore alias quis, facere sequi hic dolorum doloremque voluptatum porro et facilis modi ratione quae ea veniam rem dignissimos culpa at officiis?</p>
- <p class="paragrafo"> 3 - Lorem ipsum dolor sit amet <i>consectetur adipisicing elit. Illum maiores doloremque, repudiandae qui temporibus ratione excepturi aut reprehenderit quas facilis eveniet labore sit nihil </i>rerum hic blanditiis voluptatibus atque quod?</p>
- <p class="paragrafo"> 4 - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolorem minima nobis fuga amet excepturi ab a quod tempora! Laborum dolorum assumenda hic ea vero quaerat eum ex, accusantium voluptas?</p>
+ <p class="paragrafo"> 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam accusamus quia,
+  eius autem facere. Repudiandae soluta et rem, provident quia quisquam quaerat laboriosam nihil eos cumque, dolorum eum
+  sit.</p>
+ <p class="paragrafo"> 2 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore alias quis, facere sequi hic
+  dolorum doloremque voluptatum porro et facilis modi ratione quae ea veniam rem dignissimos culpa at officiis?</p>
+ <p class="paragrafo"> 3 - Lorem ipsum dolor sit amet <i>consectetur adipisicing elit. Illum maiores doloremque,
+   repudiandae qui temporibus ratione excepturi aut reprehenderit quas facilis eveniet labore sit nihil </i>rerum hic
+  blanditiis voluptatibus atque quod?</p>
+ <p class="paragrafo"> 4 - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolorem minima nobis fuga
+  amet excepturi ab a quod tempora! Laborum dolorum assumenda hic ea vero quaerat eum ex, accusantium voluptas?</p>
 
  <textarea id="saida"></textarea>
 
-<!-- E se colocar antes do último body ele consegue alterar pois ja carregou a página inteira-->
+ <!-- E se colocar antes do último body ele consegue alterar pois ja carregou a página inteira-->
  <script>
- //let hs = document.getElementsByTagName('h1') 
- //document.body.innerHTML += hs[0].innerHTML
+  // var na criação de variáveis - mas antigas e não tinham escopo e usar em qualquer lugar do código e em outras partes.
+  // let na criação de variáveis - só pode ser usada dentro do proprio arquivo criado
 
- let t1 = document.getElementById("tit")
- let saida = document.getElementById("saida")
+  //let hs = document.getElementsByTagName('h1') 
+  //document.body.innerHTML += hs[0].innerHTML
 
- saida.innerHTML = "Todos os meus elemtenos \n"
- saida.innerHTML += t1.innerText + "\n"
+  let t1 = document.getElementById("tit")
+  let saida = document.getElementById("saida")
 
- let ps = document.getElementsByClassName("paragrafo")
- saida.innerHTML += ps[0].innerHTML + "\n\n"
- saida.innerHTML += ps[1].innerHTML + "\n\n"
- saida.innerHTML += ps[2].innerHTML + "\n\n"
+  saida.innerHTML = "Todos os meus elemtenos \n"
+  saida.innerHTML += t1.innerText + "\n"
 
- 
- let pc = document.querySelectorAll(".paragrafo") // Colocar . para procurar classes igual no CSS
- saida.innerHTML += "Agora com um laço ForEach \n\n"
- pc.forEach(element => {
-  saida.innerHTML += element.textContent + "\n\n"
- });
+  let ps = document.getElementsByClassName("paragrafo")
+  saida.innerHTML += ps[0].innerHTML + "\n\n"
+  saida.innerHTML += ps[1].innerHTML + "\n\n"
+  saida.innerHTML += ps[2].innerHTML + "\n\n"
 
- ps[3].innerHTML = ps[0].innerHTML + "<p> Estou testando pegar um paragrado e colocar eu outro </p>"
+
+  let pc = document.querySelectorAll(".paragrafo") // Colocar . para procurar classes igual no CSS
+  saida.innerHTML += "Agora com um laço ForEach \n\n"
+  pc.forEach(element => {
+   saida.innerHTML += element.textContent + "\n\n"
+  });
+
+  ps[3].innerHTML = ps[0].innerHTML + "<p> Estou testando pegar um paragrado e colocar eu outro </p>"
  </script>
 </body>
+
 </html>
