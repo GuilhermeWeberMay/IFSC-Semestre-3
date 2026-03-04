@@ -26,11 +26,12 @@ public class HelloController {
     private TextField tfPeso;
 
     @FXML
-    protected void btCalcularOnClick(ActionEvent event) {
+    protected void btCalcularOnClick() {
         float altura =  Float.parseFloat(tfAltura.getText());
         float peso = Float.parseFloat(tfPeso.getText());
         float imc = calcularImc(altura, peso);
-        String formatada =  String.format("%.2f", imc);
+        String classificacaoImc = classificaImc(imc);
+        String formatada =  String.format("%.1f", imc);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("CALCULADORA IMC");
         alert.setHeaderText("Seu resultado!");
@@ -38,13 +39,13 @@ public class HelloController {
                              "Idade:  " + tfIdade.getText()  + "\n" +
                              "Altura: " + tfAltura.getText() + "\n" +
                              "Peso:   " + tfPeso.getText()   + "\n\n" +
-                             "IMC:    " + formatada );
-
+                             "IMC:    " + formatada          + "\n" +
+                             "Classificação: " + classificacaoImc);
     alert.showAndWait();
     }
 
     @FXML
-    protected void btNovoImcOnClick(ActionEvent actionEvent) {
+    protected void btNovoImcOnClick() {
         tfNome.setText("");
         tfIdade.setText("");
         tfAltura.setText("");
@@ -54,5 +55,23 @@ public class HelloController {
     // Fiz esse método como private para outras classes não poderem acessar e calcular
     private float calcularImc (float altura, float peso){
         return peso / (altura * altura);
+    }
+
+    private String classificaImc(float imc) {
+        String mensagem = "Erro no calculo";
+        if (imc < 18.5 ){
+            mensagem = "Baixo peso";
+        }else if ( imc < 24.9 ){
+            mensagem = "Peso adequado";
+        }else if ( imc < 29.9 ){
+            mensagem = "Sobrepeso";
+        }else if ( imc < 34.9 ){
+            mensagem = "Obesidade grau I";
+        } else if (imc < 39.9) {
+            mensagem = "Obesidade grau II";
+        }else {
+            mensagem = "Obesidade extrema";
+        }
+        return mensagem;
     }
 }
