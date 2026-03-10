@@ -6,4 +6,7 @@ module br.edu.ifsc.fln.prjjavafxmvc {
 
     opens br.edu.ifsc.fln to javafx.fxml;
     exports br.edu.ifsc.fln;
+
+    opens br.edu.ifsc.fln.controller to javafx.fxml;
+    exports br.edu.ifsc.fln.controller;
 }

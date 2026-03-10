@@ -10,10 +10,18 @@ import lombok.*;
 public class Funcionario {
     private String nome;
     private float salarioBase;
-    private byte numeroDependentes;
+    private byte qtdDependentes;
 
-    private float calcularSalario(){
-        return salarioBase + numeroDependentes * 300;
+    public double calcularSalario(){
+        return salarioBase + qtdDependentes * 300;
+    }
+
+    public String getDados(){
+        StringBuilder dados = new StringBuilder();
+        dados.append("Nome: ").append(nome).append("\n").append("Salario: R$").append(salarioBase).append("\n").
+                append("Quantidade dependentes: ").append(qtdDependentes).append("\n");
+
+        return dados.toString();
     }
 }
 
