@@ -27,8 +27,14 @@ public class FuncionarioController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Dados do funcionario");
         alert.setHeaderText("Calculo do salario");
-        String salarioFormatado = String.format("%.2f", funcionario.calcularSalario());
-        alert.setContentText(funcionario.getDados() + "\n"+ salarioFormatado);
+        alert.setContentText(funcionario.getDados() + "\n");
         alert.showAndWait();
+    }
+
+    @FXML
+    void btNovoOnClick() {
+        tfNome.clear();
+        tfQtdDependentes.clear();
+        tfSalarioBase.clear();
     }
 }

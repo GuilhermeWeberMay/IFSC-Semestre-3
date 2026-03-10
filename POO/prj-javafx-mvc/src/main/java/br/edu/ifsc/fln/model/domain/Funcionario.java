@@ -19,7 +19,8 @@ public class Funcionario {
     public String getDados(){
         StringBuilder dados = new StringBuilder();
         dados.append("Nome: ").append(nome).append("\n").append("Salario: R$").append(salarioBase).append("\n").
-                append("Quantidade dependentes: ").append(qtdDependentes).append("\n");
+                append("Quantidade dependentes: ").append(qtdDependentes).append("\n").append("Salario Liquido: R$").append(String.format("%.2f", this.calcularSalario()));
+
 
         return dados.toString();
     }

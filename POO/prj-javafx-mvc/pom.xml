@@ -66,7 +66,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>br.edu.ifsc.fln.prjjavafxmvc/br.edu.ifsc.fln.HelloApplication
+                            <mainClass>br.edu.ifsc.fln.prjjavafxmvc/br.edu.ifsc.fln.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
