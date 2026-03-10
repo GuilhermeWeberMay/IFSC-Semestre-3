@@ -1,12 +1,11 @@
-package br.edu.ifsc.fln.prjcalculadoraimc;
+package br.edu.ifsc.fln.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class HelloController {
+public class PessoaController {
     @FXML
     private Button btCalcular;
 
@@ -36,12 +35,12 @@ public class HelloController {
         alert.setTitle("CALCULADORA IMC");
         alert.setHeaderText("Seu resultado!");
         alert.setContentText("Nome       : " + tfNome.getText()   + "\n" +
-                             "Idade        : " + tfIdade.getText()  + "\n" +
-                             "Altura       : " + tfAltura.getText() + "\n" +
-                             "Peso         : " + tfPeso.getText()   + "\n\n" +
-                             "IMC              : " + formatada          + "\n" +
-                             "Classificação: " + classificacaoImc);
-    alert.showAndWait();
+                "Idade        : " + tfIdade.getText()  + "\n" +
+                "Altura       : " + tfAltura.getText() + "\n" +
+                "Peso         : " + tfPeso.getText()   + "\n\n" +
+                "IMC              : " + formatada          + "\n" +
+                "Classificação: " + classificacaoImc);
+        alert.showAndWait();
     }
 
     @FXML

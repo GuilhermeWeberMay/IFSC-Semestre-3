@@ -1,8 +1,12 @@
 module br.edu.ifsc.fln.prjcalculadoraimc {
     requires javafx.controls;
     requires javafx.fxml;
+    requires static lombok;
 
 
-    opens br.edu.ifsc.fln.prjcalculadoraimc to javafx.fxml;
-    exports br.edu.ifsc.fln.prjcalculadoraimc;
+    opens br.edu.ifsc.fln to javafx.fxml;
+    exports br.edu.ifsc.fln;
+
+    opens br.edu.ifsc.fln.controller to javafx.fxml;
+    exports br.edu.ifsc.fln.controller;
 }
