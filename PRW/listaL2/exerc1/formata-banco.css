@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap');
+
+body{
+ font-family: 'Bpmf Huninn';
+ margin: 0;
+}
+
+h1{
+ text-align: center;
+ margin: 0;
+ border-bottom: 1% solid black;
+ background-color: grey;
+ margin-bottom: 5%;
+}
+
+fieldset{
+ border-radius: 2%;
+ background-color: lightgray;
+ width: 75%;
+ margin: 5% auto;
+ padding-left: 10%;
+ box-shadow: 5px 5px 5px black;
+}
+
+input[type="text"], input[type="number"]{
+ margin-bottom: 5%;
+}
+
+input[name="titulo"], input[name="autor"], input[name="isbn"], input[name="preco"]{
+ width: 20%;
+}
+
+button{
+ display: block;
+ height: 40px;
+ font-weight: bold;
+ font-size: 18px;
+ font-family: 'Bpmf Huninn';
+ margin: auto;
+}
+
+p{
+ text-align: center;
+ border: 1px solid black;
+ margin: 30px auto;
+ width: 75%;
+ border-radius: 15px;
+}
+
+span{
+ font-weight: bold;
+ color: red;
+ font-style: italic;
+}
+
+table{
+ width: 75%;
+ border: 1px solid black;
+ margin: 30px auto;
+ box-shadow: 5px 5px 5px black;
+}
+
+th, td{
+ border: 1px solid black;
+ padding: 10px;
+ text-align: center;
+}
