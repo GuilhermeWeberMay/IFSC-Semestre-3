@@ -1,16 +1,24 @@
 package br.edu.ifsc.fln.controller;
 
+import br.edu.ifsc.fln.model.domain.Pessoa;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 
-public class PessoaController {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+import java.util.ResourceBundle;
+
+public class PessoaController implements Initializable {
     @FXML
-    private Button btCalcular;
+    private ChoiceBox <String> cbSexo;
 
     @FXML
-    private Button btNovo;
+    private Spinner<Integer> sIdade;
 
     @FXML
     private TextField tfAltura;
@@ -26,20 +34,17 @@ public class PessoaController {
 
     @FXML
     protected void btCalcularOnClick() {
-        float altura =  Float.parseFloat(tfAltura.getText());
-        float peso = Float.parseFloat(tfPeso.getText());
-        float imc = calcularImc(altura, peso);
-        String classificacaoImc = classificaImc(imc);
-        String formatada =  String.format("%.1f", imc);
+        Pessoa pessoa = new Pessoa(
+                tfNome.getText(),
+                Byte.parseByte(tfIdade.getText()),
+                Float.parseFloat(tfAltura.getText()),
+                Float.parseFloat(tfPeso.getText()),
+                cbSexo.getSelectionModel().getSelectedItem()
+        );
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("CALCULADORA IMC");
         alert.setHeaderText("Seu resultado!");
-        alert.setContentText("Nome       : " + tfNome.getText()   + "\n" +
-                "Idade        : " + tfIdade.getText()  + "\n" +
-                "Altura       : " + tfAltura.getText() + "\n" +
-                "Peso         : " + tfPeso.getText()   + "\n\n" +
-                "IMC              : " + formatada          + "\n" +
-                "Classificação: " + classificacaoImc);
+        alert.setContentText(pessoa.getDados());
         alert.showAndWait();
     }
 
@@ -51,26 +56,14 @@ public class PessoaController {
         tfPeso.setText("");
     }
 
-    // Fiz esse método como private para outras classes não poderem acessar e calcular
-    private float calcularImc (float altura, float peso){
-        return peso / (altura * altura);
-    }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        ObservableList<String> opcoes = FXCollections.observableArrayList("Feminino", "Masculino");
 
-    private String classificaImc(float imc) {
-        String mensagem = "Erro no calculo";
-        if (imc < 18.5 ){
-            mensagem = "Baixo peso";
-        }else if ( imc < 24.9 ){
-            mensagem = "Peso adequado";
-        }else if ( imc < 29.9 ){
-            mensagem = "Sobrepeso";
-        }else if ( imc < 34.9 ){
-            mensagem = "Obesidade grau I";
-        } else if (imc < 39.9) {
-            mensagem = "Obesidade grau II";
-        }else {
-            mensagem = "Obesidade extrema";
-        }
-        return mensagem;
+        cbSexo.setItems(opcoes);
+
+        cbSexo.setValue("Masculino");
+
+
     }
 }
