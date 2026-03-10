@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -24,8 +25,11 @@
             <TextField fx:id="tfNome" GridPane.columnIndex="1" />
             <TextField fx:id="tfSalarioBase" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="tfQtdDependentes" prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="196.0" text="Nome:" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="189.0" text="Salário base:" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="189.0" text="Númeor de dependentes:" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button layoutX="174.0" layoutY="174.0" mnemonicParsing="false" onAction="#btCalcularOnAction" text="Button" />
+      <Button layoutX="174.0" layoutY="174.0" mnemonicParsing="false" onAction="#btCalcularOnAction" text="Calcular" />
    </children>
 </AnchorPane>
