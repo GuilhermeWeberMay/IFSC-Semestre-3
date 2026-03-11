@@ -31,7 +31,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="tfNome" promptText="Nome..." GridPane.columnIndex="1">
+            <TextField fx:id="tfNome" GridPane.columnIndex="1">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>
@@ -39,12 +39,12 @@
                   <Insets bottom="10.0" />
                </opaqueInsets>
             </TextField>
-            <Slider fx:id="sliderIdade" blockIncrement="1.0" minorTickCount="10" prefHeight="38.0" prefWidth="233.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Slider fx:id="sliderIdade" blockIncrement="1.0" minorTickCount="10" prefHeight="38.0" prefWidth="233.0" showTickLabels="true" showTickMarks="true" value="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <cursor>
                   <Cursor fx:constant="CROSSHAIR" />
                </cursor>
             </Slider>
-            <TextField fx:id="tfAltura" promptText="Altura..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="tfAltura" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>
@@ -52,12 +52,12 @@
                   <Insets bottom="10.0" />
                </opaqueInsets>
             </TextField>
-            <TextField fx:id="tfPeso" promptText="Peso..." GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="tfPeso" prefHeight="35.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font>
             </TextField>
-            <ChoiceBox fx:id="cbSexo" prefHeight="26.0" prefWidth="225.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="cbSexo" prefHeight="35.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="157.0" text="Nome:">
                <opaqueInsets>
                   <Insets />
@@ -117,7 +117,7 @@
       </GridPane>
       <Button layoutX="200.0" layoutY="378.0" mnemonicParsing="false" onAction="#btCalcularOnClick" prefHeight="26.0" prefWidth="125.0" text="Calcular" />
       <Button layoutX="340.0" layoutY="378.0" mnemonicParsing="false" onAction="#btNovoImcOnClick" prefHeight="26.0" prefWidth="126.0" text="Novo" />
-      <Label fx:id="labelMostraIdade" layoutX="514.0" layoutY="274.0" prefHeight="61.0" prefWidth="39.0">
+      <Label fx:id="labelMostraIdade" layoutX="515.0" layoutY="301.0" prefHeight="61.0" prefWidth="39.0">
          <font>
             <Font size="20.0" />
          </font>

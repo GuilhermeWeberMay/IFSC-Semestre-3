@@ -21,12 +21,14 @@ public class Pessoa {
     public String getDados(){
         float imc = this.calculaImc();
         StringBuilder dados = new StringBuilder();
-        dados.append("Nome: " + this.getNome()).append("\n");
-        dados.append("Idade: " + this.getIdade()).append("\n");
-        dados.append("Altura: " + this.getAltura()).append("\n");
-        dados.append("Peso: " + this.getPeso()).append("\n");
-        dados.append("Sexo: " + this.getSexo()).append("\n");
-        dados.append("IMC: " +String.format("%.2f",imc)).append("\n");
+        dados.append("Dados cadastrados: \n")
+        .append("Nome         : " + this.getNome()).append("\n");
+        dados.append("Idade        : " + this.getIdade()).append(" anos\n");
+        dados.append("Altura       : " + this.getAltura()).append(" m\n");
+        dados.append("Peso         : " + this.getPeso()).append(" kg\n");
+        dados.append("Sexo         : " + this.getSexo()).append("\n\n")
+        .append("Dados do IMC         : ").append("\n");
+        dados.append("IMC          : " +String.format("%.2f",imc)).append("\n");
         dados.append("Classificação: " + classificaImc(imc)).append("\n");
 
         return dados.toString();
