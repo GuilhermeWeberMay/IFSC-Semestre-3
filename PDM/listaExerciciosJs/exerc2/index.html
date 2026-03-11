@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset='utf-8'>
+ <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ <title>Page Title</title>
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+ <script>
+  function esconderParagrafo() {
+    const objParag = document.getElementById("parag");
+    objParag.style.display = "none";
+  }
+  function aparecerParagrafo() {
+    const objParag = document.getElementById("parag");
+    objParag.style.display = "block";
+  }
+ </script>
+</head>
+<body>
+ <p id="parag">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis eligendi temporibus voluptatem labore consequatur consectetur iste, sint dignissimos iure doloremque in ducimus aspernatur mollitia. Expedita voluptas sequi corporis maxime eius?</p>
+
+ <input type="button" value="Mostrar paragrafo" onclick="aparecerParagrafo()">
+ <input type="button" value="Esconder paragrafo" onclick="esconderParagrafo()">
+
+</body>
+</html>
