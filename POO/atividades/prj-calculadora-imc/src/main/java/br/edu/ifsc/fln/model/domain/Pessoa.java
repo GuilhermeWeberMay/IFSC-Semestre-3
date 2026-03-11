@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Pessoa {
     private String nome;
-    private byte idade;
+    private int idade;
     private float altura;
     private float peso;
     private String sexo;

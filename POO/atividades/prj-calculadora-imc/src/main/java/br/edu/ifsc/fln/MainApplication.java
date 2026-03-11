@@ -11,7 +11,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("view/calculoImc-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400 ,400);
+        Scene scene = new Scene(fxmlLoader.load(), 600 ,430);
         stage.setTitle("Calculadora IMC - Guilherme W. May");
         stage.setScene(scene);
         stage.show();
