@@ -49,7 +49,7 @@ public class PessoaController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("CALCULADORA IMC");
         alert.setHeaderText("Seu resultado!");
-        alert.setContentText(pessoa.getDados() + "\n\nObrigado por utilizar nossa calculadora!");
+        alert.setContentText(pessoa.getDados() + "\nObrigado por utilizar nossa calculadora!");
         alert.showAndWait();
     }
 
