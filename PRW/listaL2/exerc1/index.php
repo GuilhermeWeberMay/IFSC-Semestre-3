@@ -57,8 +57,6 @@
  // Método para criar a tabela alunos
  $banco->criarTabela($conexao);
 
-
-
  // Vamos fazer o PHP descobrir qual botão do formulário foi clicado
  if (isset($_POST['cadastrar'])) {
  }
@@ -66,7 +64,6 @@
  }
  if (isset($_POST['contar'])) {
  }
-
 
  //Encerrar a conexão do PHP com o MySQL
  $banco->fecharConexao($conexao);
