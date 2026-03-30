@@ -38,14 +38,26 @@
  require 'Aluno.inc.php';
 
  // Vamos usar o método construtor para criar um objeto banco
- $banco = new BancoDeDados('', 'alunos', 'localhost', 'root', '');
+ $banco = new BancoDeDados('localhost', 'root', '', 'db_escola', 'alunos');
 
  // Visualizando o conteúdo do objeto banco
  ##var_dump($banco);
 
  $conexao = $banco->conectar();
 
- echo "<p> Conexão do PHP com o MySQL efetuada com sucesso! </p>";
+ // Criar o banco de dados alunos
+ $banco->criarBanco($conexao);
+
+ // Método para abrir o banco de dados
+ $banco->abrirBanco($conexao);
+
+ // Método para definir o charset do banco de dados
+ $banco->definirCharset($conexao);
+
+ // Método para criar a tabela alunos
+ $banco->criarTabela($conexao);
+
+
 
  // Vamos fazer o PHP descobrir qual botão do formulário foi clicado
  if (isset($_POST['cadastrar'])) {
@@ -54,6 +66,11 @@
  }
  if (isset($_POST['contar'])) {
  }
+
+
+ //Encerrar a conexão do PHP com o MySQL
+ $banco->fecharConexao($conexao);
+
  ?>
 </body>
 
