@@ -15,13 +15,13 @@
   <form action="index.php" method="post">
 
    <label for="matricula">Matrícula:</label>
-   <input type="text" id="matricula" name="matricula" required autofocus><br>
+   <input type="text" id="matricula" name="matricula" autofocus><br>
 
    <label for="nome">Nome:</label>
-   <input type="text" id="nome" name="nome" required><br>
+   <input type="text" id="nome" name="nome"><br>
 
    <label for="media">Média final:</label>
-   <input type="number" id="media" name="media" required min="0" max="10" step="0.1"><br>
+   <input type="number" id="media" name="media" min="0" max="10" step="0.1"><br>
 
    <div>
     <button name="cadastrar" type="submit">Cadastrar</button>
@@ -57,12 +57,19 @@
  // Método para criar a tabela alunos
  $banco->criarTabela($conexao);
 
+ // Vamos criar o objeto aluno, a partir do construtor padrão da classe Aluno.
+ $aluno = new Aluno();
+
  // Vamos fazer o PHP descobrir qual botão do formulário foi clicado
  if (isset($_POST['cadastrar'])) {
+  $aluno->receberDadosForm($conexao);
+  $aluno->create($conexao, $banco->nomeTabela);
  }
  if (isset($_POST['listar'])) {
+  $aluno->tabularDados($conexao, $banco->nomeTabela);
  }
  if (isset($_POST['contar'])) {
+  $aluno->contarAprovados($conexao, $banco->nomeTabela);
  }
 
  //Encerrar a conexão do PHP com o MySQL
