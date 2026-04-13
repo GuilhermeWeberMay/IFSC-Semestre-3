@@ -74,4 +74,12 @@ class Produto
   $vetorRegistro = $resultado->fetch_array();
   echo "<p> Faturamento total dos produtos não perecíveis: R$ " . htmlentities($vetorRegistro[0], ENT_QUOTES, 'UTF-8') . "</p>";
  }
+ 
+ function totalItensEstoque($conexao, $nomeTabela)
+ {
+  $sql = "SELECT SUM(estoque) FROM $nomeTabela ";
+  $resultado = $conexao->query($sql) or die($conexao->error);
+  $vetorRegistro = $resultado->fetch_array();
+  echo "<p> Total de itens: " . htmlentities($vetorRegistro[0], ENT_QUOTES, 'UTF-8') . "</p>";
+ }
 }

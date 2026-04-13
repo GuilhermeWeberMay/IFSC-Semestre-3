@@ -37,6 +37,7 @@
      <option value="mostrar"> Mostrar dados perecíveis</option>
      <option value="descricao"> Mostrar descrição menor quantidade </option>
      <option value="calcular"> Faturamento total não pereciveis </option>
+     <option value="total"> Mostrar o total de itens no estoque</option>
     </select>
     <button type="submit" name="botao">Executar</button>
    </div>
@@ -91,6 +92,9 @@
    case 'calcular':
     $produto->faturamentoTotalNaoPereciveis($conexao, $banco->nomeTabela);
     break;
+   case 'total':
+     $produto->totalItensEstoque($conexao, $banco->nomeTabela);
+     break;
   }
  }
  //Encerrar a conexão do PHP com o MySQL
