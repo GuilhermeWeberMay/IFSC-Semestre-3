@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
  <meta charset="UTF-8">
@@ -10,45 +10,34 @@
 </head>
 
 <body>
- <div class="w3-bar w3-green">
-  <h2 class="w3-center"> PHP + MYSQL - Exercício 5 </h2>
-  <div class="w3-bar-item w3-large" onclick="teste1()" style="cursor: pointer;"> Cadastrar </div>
-  <div class="w3-bar-item w3-large" onclick="teste2()" style="cursor: pointer;"> Atualizar </div>
-  <div class="w3-bar-item w3-large" onclick="teste3()" style="cursor: pointer;"> Excluir </div>
-  <div class="w3-bar-item w3-large" onclick="teste4()" style="cursor: pointer;"> Buscar </div>
+ <div class="w3-bar titulo">
+  <h1 class="w3-center"> PHP + MYSQL - Exercício 6 </h1>
+  <form action="index.php" method="get">
+   <button class="w3-btn" onclick="mostraFormulario()" type="button"> Cadastrar projeto </button>
+   <button name="listar" class="w3-btn"> Listar todos </button>
+   <button name="posteriores" class="w3-btn"> Listar posteriores </button>
+   <button name="excluir" class="w3-btn"> Excluir projetos </button>
+  </form>
  </div>
 
- <form action="index.php" method="post">
+ <form action="index.php" method="post" id="formulario">
   <div id="cadastro" class="w3-container w3-card-4 w3-light-grey w3-margin w3-padding">
    <h2> Cadastrar um novo projeto </h2>
-   <label for="id"> ID do projeto: </label>
-   <input class="w3-input w3-border" type="text" name="id" id="id" required>
+   <label for="id"> ID: </label>
+   <input class="w3-input w3-border" type="number" name="id" id="id" required>
 
-   <label for="orcamento"> Orçamento do projeto: </label>
+   <label for="orcamento"> Orçamento: </label>
    <input class="w3-input w3-border" type="number" step="0.01" name="orcamento" id="orcamento" required>
 
-   <label for="data_inicio"> Data de início do projeto: </label>
+   <label for="data_inicio"> Data de início: </label>
    <input class="w3-input w3-border" type="date" name="data_inicio" id="data_inicio" required>
 
-   <label for="horas_execucao"> Horas de execução do projeto: </label>
+   <label for="horas_execucao"> Estimativa de horas: </label>
    <input class="w3-input w3-border" type="number" name="horas_execucao" id="horas_execucao" required>
 
-   <button class="w3-button w3-green w3-margin-top" type="submit" name="cadastrar"> Cadastrar </button>
+   <button class="w3-button w3-margin-top cadastrar w3-block" type="submit" name="cadastrar"> Cadastrar </button>
   </div>
  </form>
-
- <form action="index.php">
-  <button name="listar"> Listar proejtos </button>
- </form>
-
- <form action="index.php">
-  <button name="posteriores"> Projetos posteriores </button>
- </form>
-
- <form action="index.php">
-  <button name="excluir"> Excluir projetos menores que 100 horas e R$1000 de orçamento </button>
- </form>
-
  <?php
  include_once "Projetos.inc.php";
  include_once "bda.inc.php";
@@ -67,7 +56,9 @@
   echo "<p> Projeto cadastrado com sucesso! </p>";
  }
  if (isset($_GET['listar'])) {
+  echo "<div id='resultados' class='w3-container'>";
   $projeto->read($conexao, $banco->nomeTabela);
+  echo "</div>";
  }
  if (isset($_GET['posteriores'])) {
   $projeto->readDataInicio($conexao, $banco->nomeTabela);
@@ -75,7 +66,8 @@
  if (isset($_GET['excluir'])) {
   $projeto->delete($conexao, $banco->nomeTabela);
  }
-?>
+ ?>
+ <script src="main.js"></script>
 </body>
 
 </html>

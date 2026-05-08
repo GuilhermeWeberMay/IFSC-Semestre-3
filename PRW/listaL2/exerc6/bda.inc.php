@@ -44,7 +44,7 @@ class BancoDeDados
  function criarTabela($conexao)
  {
   $sql = "CREATE TABLE IF NOT EXISTS " . $this->nomeTabela . "(
-   id VARCHAR(20) NOT NULL PRIMARY KEY,
+   id int NOT NULL PRIMARY KEY,
    orcamento DECIMAL(30,2) NOT NULL,
    data_inicio date not null,
    horas_execucao int not null

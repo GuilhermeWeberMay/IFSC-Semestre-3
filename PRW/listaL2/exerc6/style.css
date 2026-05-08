@@ -1,0 +1,24 @@
+body {
+ background-color: #F9F8F6;
+}
+
+div.titulo {
+ background-color: #D9CFC7;
+
+}
+
+button.cadastrar {
+ background-color: #C9B59C;
+}
+
+#formulario {
+ display: none;
+}
+
+caption {
+ background-color: #EFE9E3;
+}
+
+#excluidos{
+ color: red;
+}
