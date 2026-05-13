@@ -25,7 +25,7 @@
  </div>
 
 
- <div class="formulario w3-container w3-hide">
+ <div class="formulario w3-container">
   <fieldset>
    <legend> Cadastro de Cliente </legend>
    <form action="index.php">
@@ -54,15 +54,17 @@
     <label for="senha"> Senha: </label>
     <input type="password" name="senha" id="senha" class="w3-input"> <br>
 
-    <button type="submit" id="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar cliente </button>
+    <button type="submit" id="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar cliente
+    </button>
    </form>
   </fieldset>
  </div>
 
- <div class="w3-container w3-hide home">
+ <div class="w3-container home">
   <main>
    <h2 class="w3-center"> Caro(a) usuário, bem-vindo(a) </h2>
-   <p class="w3-center"> Este protótipo de aplicação web, simulando um sistema de lavação de automóveis, executa, entre outros, as
+   <p class="w3-center"> Este protótipo de aplicação web, simulando um sistema de lavação de automóveis, executa, entre
+    outros, as
     seguintes operações: <br> <br>
     a)Cadastrar clientes da aplicação; <br>
     b)Cadastrar dados do veículo de cada cliente; <br>
@@ -73,7 +75,7 @@
   </main>
  </div>
 
- <div class="formulario w3-container w3-hide">
+ <div class="formulario w3-container">
   <fieldset>
    <legend> Cadastro de Veículo </legend>
    <form action="index.php">
@@ -93,7 +95,8 @@
     <label for="ano"> Ano: </label>
     <input type="text" name="ano" id="ano" class="w3-input"> <br>
 
-    <button type="submit" id="cadastrar-veiculo" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar veículo </button>
+    <button type="submit" id="cadastrar-veiculo" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar veículo
+    </button>
    </form>
   </fieldset>
  </div>
@@ -130,17 +133,29 @@
   </fieldset>
  </div>
 
- <div class="rodape w3-center w3-hide">
-  <footer>
-   <p> Sitema feito por Guilherme Weber May no Curso Técnico de Desenvolvimento de Sistemas do Instituto Federal de
-    Santa Catarina - IFSC Campûs Florianópolis - Centro <br>
-    Copyright &copy;2025 - todos os direitos reservados. Proibida a reprodução parcial ou total do conteúdo presente
-    nesta aplicação <br>
-    Entre em contato conosco: <br>
-    <a href="contato.html" target="_blank"> Contato </a>
-   </p>
-  </footer>
+ <div class="w3-container">
+  <fieldset>
+   <legend> Entre em contato </legend>
+   <label for="sugestao"> Deixe sua sugestão abaixo: </label> <br>
+   <textarea name="sugestao" id="sugestao"></textarea>
+   <button type="submit" id="enviar-sugestao" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Enviar sugestão </button>
+  </fieldset>
+
  </div>
+
+
+ <footer class="w3-center">
+  <div class="rodape w3-center"></div>
+  <p> Sitema feito por Guilherme Weber May no Curso Técnico de Desenvolvimento de Sistemas do Instituto Federal de
+   Santa Catarina - IFSC Campûs Florianópolis - Centro <br>
+   Copyright &copy;2025 - todos os direitos reservados. Proibida a reprodução parcial ou total do conteúdo presente
+   nesta aplicação <br>
+   Entre em contato conosco: <br>
+   <span onclick=""> Contato </span>
+  </p>
+  </div>
+ </footer>
+
  <script src="../js/validaFormularios.js"></script>
  <script src="../js/telas.js"></script>
 </body>
