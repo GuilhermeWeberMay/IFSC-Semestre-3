@@ -8,8 +8,8 @@
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-deep-purple.css">
  <link rel='stylesheet' href='../css/main.css'>
-<!-- O ID nas tags html serve para navegação de telas SPA -->
-<!-- Todas as Div's devem ter um seu atributo class escrito 'tela' -->
+ <!-- O ID nas tags html serve para navegação de telas SPA -->
+ <!-- Todas as Div's devem ter um seu atributo class escrito 'tela' -->
 </head>
 
 <body>
@@ -36,7 +36,7 @@
     <input type="text" name="nome" id="nome" class="w3-input"> <br>
 
     <label for="cpf"> Cpf: </label>
-    <input type="text" name="cpf" id="cpf" class="w3-input" value="___.___.___-__" maxlength="14" > <br>
+    <input type="text" name="cpf" id="cpf" class="w3-input" value="___.___.___-__" maxlength="14"> <br>
 
     <label for="email"> E-mail: </label>
     <input type="email" name="email" id="email" class="w3-input"> <br>
@@ -91,8 +91,15 @@
     <label for="modelo"> Modelo: </label>
     <input type="text" name="modelo" id="modelo" class="w3-input"> <br>
 
-    <label for="placa"> Placa: </label>
-    <input type="text" name="placa" id="placa" class="w3-input"> <br>
+    <label for="tipoPlaca">Tipo da placa:</label>
+    <select id="tipoPlaca" class="w3-input">
+     <option value="mercosul">Mercosul (ABC1D23)</option>
+     <option value="antiga" selected>Placa Antiga (ABC-1234)</option>
+    </select> <br>
+
+    <label for="placa" class="">Placa:</label>
+    <input type="text" id="placa" placeholder="ABC-1234" maxlength="8" class="w3-margin-top w3-input">
+    <div id="feedback"></div><br>
 
     <label for="cor"> Cor: </label>
     <input type="text" name="cor" id="cor" class="w3-input"> <br>
@@ -100,7 +107,7 @@
     <label for="ano"> Ano: </label>
     <input type="text" name="ano" id="ano" class="w3-input"> <br>
 
-    <button type="submit" id="cadastrar-veiculo" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar veículo
+    <button type="submit" id="cadastrar-veiculo" class="w3-button w3-block w3-theme-l1 w3-margin-top" disabled> Cadastrar veículo
     </button>
    </form>
   </fieldset>
