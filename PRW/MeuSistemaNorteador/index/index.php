@@ -35,6 +35,9 @@
     <label for="nome"> Nome: </label>
     <input type="text" name="nome" id="nome" class="w3-input"> <br>
 
+    <label for="cpf"> Cpf: </label>
+    <input type="text" name="cpf" id="cpf" class="w3-input" value="___.___.___-__" maxlength="14" > <br>
+
     <label for="email"> E-mail: </label>
     <input type="email" name="email" id="email" class="w3-input"> <br>
 
