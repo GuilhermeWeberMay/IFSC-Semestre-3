@@ -1,7 +1,9 @@
-function trocarTelas(tela) {
-    var telas = document.getElementsByClassName("tela");
-    for (var i = 0; i < telas.length; i++) {
-        telas[i].style.display = "none";
-    }
-    document.getElementById(tela).style.display = "block";
+function navega(destino) {
+ let telas = document.getElementsByClassName('tela')
+ Array.from(telas).forEach(element => {
+  element.classList.remove('w3-show')
+  element.classList.add('w3-hide')
+ });
+ document.getElementById(destino).classList.remove('w3-hide')
+ document.getElementById(destino).classList.add('w3-show')
 }

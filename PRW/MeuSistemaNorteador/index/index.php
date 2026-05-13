@@ -8,6 +8,8 @@
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-deep-purple.css">
  <link rel='stylesheet' href='../css/main.css'>
+<!-- O ID nas tags html serve para navegação de telas SPA -->
+<!-- Todas as Div's devem ter um seu atributo class escrito 'tela' -->
 </head>
 
 <body>
@@ -15,17 +17,17 @@
  <div class='w3-container w3-theme w3-margin-bottom'>
   <nav> <!-- Professor o NAV fica antes da DIV ou depois?-->
    <h1 class="w3-center"> Lavação GWM - PRW2 </h1>
-   <button class="w3-button"> Página Incial </button>
-   <button class="w3-button"> Cadastro Cliente </button>
-   <button class="w3-button"> Cadastro Veículo </button>
-   <button class="w3-button"> Contato </button>
-   <button class="w3-button"> Login Cliente </button>
-   <button class="w3-button"> Login Administrador </button>
+   <button class="w3-button" onclick="navega('home')"> Página Incial </button>
+   <button class="w3-button" onclick="navega('formulario-cliente')"> Cadastro Cliente </button>
+   <button class="w3-button" onclick="navega('formulario-veiculo')"> Cadastro Veículo </button>
+   <button class="w3-button" onclick="navega('contato')"> Contato </button>
+   <button class="w3-button" onclick="navega('login-cliente')"> Login Cliente </button>
+   <button class="w3-button" onclick="navega('login-administrador')"> Login Administrador </button>
   </nav>
  </div>
 
 
- <div class="formulario w3-container">
+ <div class="w3-container w3-hide tela" id="formulario-cliente">
   <fieldset>
    <legend> Cadastro de Cliente </legend>
    <form action="index.php">
@@ -60,7 +62,7 @@
   </fieldset>
  </div>
 
- <div class="w3-container home">
+ <div class="w3-container tela" id="home">
   <main>
    <h2 class="w3-center"> Caro(a) usuário, bem-vindo(a) </h2>
    <p class="w3-center"> Este protótipo de aplicação web, simulando um sistema de lavação de automóveis, executa, entre
@@ -75,7 +77,7 @@
   </main>
  </div>
 
- <div class="formulario w3-container">
+ <div class="w3-container w3-hide tela" id="formulario-veiculo">
   <fieldset>
    <legend> Cadastro de Veículo </legend>
    <form action="index.php">
@@ -101,7 +103,7 @@
   </fieldset>
  </div>
 
- <div class="w3-container">
+ <div class="w3-container w3-hide tela" id="login-cliente">
   <fieldset>
    <legend> Login Cliente </legend>
    <form action="index.php">
@@ -117,7 +119,7 @@
   </fieldset>
  </div>
 
- <div class="w3-container">
+ <div class="w3-container w3-hide tela" id="login-administrador">
   <fieldset>
    <legend> Login Administrador </legend>
    <form action="index.php">
@@ -133,7 +135,7 @@
   </fieldset>
  </div>
 
- <div class="w3-container">
+ <div class="w3-container w3-hide tela" id="contato">
   <fieldset>
    <legend> Entre em contato </legend>
    <label for="sugestao"> Deixe sua sugestão abaixo: </label> <br>
@@ -145,7 +147,7 @@
 
 
  <footer class="w3-center">
-  <div class="rodape w3-center"></div>
+  <div class="w3-center"></div>
   <p> Sitema feito por Guilherme Weber May no Curso Técnico de Desenvolvimento de Sistemas do Instituto Federal de
    Santa Catarina - IFSC Campûs Florianópolis - Centro <br>
    Copyright &copy;2025 - todos os direitos reservados. Proibida a reprodução parcial ou total do conteúdo presente
