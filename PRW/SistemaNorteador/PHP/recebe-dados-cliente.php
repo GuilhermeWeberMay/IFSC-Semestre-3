@@ -15,7 +15,7 @@
  
   <main>
    <?php
-    require "../includes/criar-classe-conexao.inc.php";
+    require "../includes/bda.php";
     require "../includes/criar-classe-clientes.inc.php";
    ?>
 

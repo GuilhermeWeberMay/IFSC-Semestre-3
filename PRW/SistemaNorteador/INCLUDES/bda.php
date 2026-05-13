@@ -57,7 +57,14 @@
    $conexao->query($sql) OR die($conexao->error);
    }
 
- 
+  function criarTabelaVeiculo($conexao){
+   $sql = "CREATE TABLE IF NOT EXISTS $this->nomeDaTabelaVeiculos(
+    ID int not null auto_increment,
+    fabricante varchar(300),
+    modelo varchar(300),
+    placa varchar(300)
+    );";
+  }
   function desconectar($conexao)
    {
    $conexao->close();
