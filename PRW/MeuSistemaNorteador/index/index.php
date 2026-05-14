@@ -30,7 +30,7 @@
  <div class="w3-container w3-hide tela" id="formulario-cliente">
   <fieldset>
    <legend> Cadastro de Cliente </legend>
-   <form action="index.php">
+   <form action="index.php" method="post">
 
     <label for="nome"> Nome: </label>
     <input type="text" name="nome" id="nome" class="w3-input"> <br>
@@ -59,7 +59,7 @@
     <label for="senha"> Senha: </label>
     <input type="password" name="senha" id="senha" class="w3-input"> <br>
 
-    <button type="submit" id="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar cliente
+    <button type="submit" id="cadastrar-cliente" name="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar cliente
     </button>
    </form>
   </fieldset>
@@ -167,6 +167,27 @@
   </p>
   </div>
  </footer>
+
+ <?php
+ require "../includes/banco-dados.inc.php";
+ require "../php/Cliente.php";
+
+ $banco = new BancoDeDados('localhost', 'root', '', 'projeto_lavacao_prw2', 'clientes', 'veiculos', 'administradores');
+ $cliente = new Cliente();
+
+ $conexao = $banco->criarConexao();
+ $banco->criarBanco($conexao);
+ $banco->abrirBanco($conexao);
+ $banco->definirCharset($conexao);
+ $banco->criarTabelaClientes($conexao);
+
+ if (isset($POST['cadastrar-cliente'])) {
+  echo "Chegou no IF cadastro cliente";
+  $cliente->receberDados($conexao);
+  $cliente->create($conexao, $banco->nomeDaTabelaClientes);
+  echo"cadastrou";
+ }
+ ?>
 
  <script src="../js/valida-cpf-cep.js"></script>
  <script src="../js/valida-placa.js"></script>

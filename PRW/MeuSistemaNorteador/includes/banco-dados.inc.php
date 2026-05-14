@@ -45,9 +45,10 @@ class BancoDeDados
 
  function criarTabelaClientes($conexao)
  {
-  $sql = "CREATE TABLE IF NOT $this->nomeDaTabelaClientes (
+  $sql = "CREATE TABLE IF NOT EXISTS $this->nomeDaTabelaClientes (
              ID INT PRIMARY KEY AUTO_INCREMENT,
              nome VARCHAR(300),
+             cpf varchar(15),
              email VARCHAR(300),
              telefone CHAR(11),
              rua varchar (300),
