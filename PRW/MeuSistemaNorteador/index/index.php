@@ -51,7 +51,7 @@
     <input type="text" name="numero-endereco" id="numero-endereco" class="w3-input"> <br>
 
     <label for="cep"> CEP: </label>
-    <input type="text" name="cep" id="cep" class="w3-input"> <br>
+    <input type="text" name="cep" id="cep" class="w3-input" value="_____-___" maxlength="8"> <br>
 
     <label for="usuario"> Usuário: </label>
     <input type="text" name="usuario" id="usuario" class="w3-input"><br>
@@ -157,19 +157,21 @@
 
 
  <footer class="w3-center">
-  <div class="w3-center"></div>
+  <div class="w3-center tela"></div>
   <p> Sitema feito por Guilherme Weber May no Curso Técnico de Desenvolvimento de Sistemas do Instituto Federal de
    Santa Catarina - IFSC Campûs Florianópolis - Centro <br>
    Copyright &copy;2025 - todos os direitos reservados. Proibida a reprodução parcial ou total do conteúdo presente
    nesta aplicação <br>
    Entre em contato conosco: <br>
-   <span onclick=""> Contato </span>
+   <span onclick="navega('contato')"> Contato </span>
   </p>
   </div>
  </footer>
 
- <script src="../js/validaFormularios.js"></script>
+ <script src="../js/valida-cpf-cep.js"></script>
+ <script src="../js/valida-placa.js"></script>
  <script src="../js/telas.js"></script>
+
 </body>
 
 </html>
