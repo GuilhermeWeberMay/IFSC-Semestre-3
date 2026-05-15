@@ -27,7 +27,7 @@
  </div>
 
  <form action="../index/index.php" method="post">
-  <div class="w3-container w3-hide tela w3-border" id="formulario-cliente">
+  <div class="w3-container w3-hide tela w3-border w3-margin" id="formulario-cliente">
    <label for="nome"> Nome: </label>
    <input type="text" name="nome" id="nome" class="w3-input"> <br>
 
@@ -55,13 +55,12 @@
    <label for="senha"> Senha: </label>
    <input type="password" name="senha" id="senha" class="w3-input"> <br>
 
-   <button type="submit" id="cadastrar-cliente" name="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar cliente
+   <button type="submit" id="cadastrar-cliente" name="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top w3-margin-bottom"> Cadastrar cliente
    </button>
   </div>
  </form>
 
  <div class="w3-container tela" id="home">
-  <main>
    <h2 class="w3-center"> Caro(a) usuário, bem-vindo(a) </h2>
    <p class="w3-center"> Este protótipo de aplicação web, simulando um sistema de lavação de automóveis, executa, entre
     outros, as
@@ -72,41 +71,37 @@
     d)Logar os administradores da aplicação; <br>
     e)Outros serviços; <br>
    </p>
-  </main>
  </div>
 
- <div class="w3-container w3-hide tela" id="formulario-veiculo">
-  <fieldset>
-   <legend> Cadastro de Veículo </legend>
-   <form action="index.php">
+ <form action="../index/index.php" method="post">
+  <div class="w3-container w3-hide tela w3-border w3-margin" id="formulario-veiculo">
+   <label for="fabricante"> Fabricante: </label>
+   <input type="text" name="fabricante" id="fabricante" class="w3-input"> <br>
 
-    <label for="fabricante"> Fabricante: </label>
-    <input type="text" name="fabricante" id="fabricante" class="w3-input"> <br>
+   <label for="modelo"> Modelo: </label>
+   <input type="text" name="modelo" id="modelo" class="w3-input"> <br>
 
-    <label for="modelo"> Modelo: </label>
-    <input type="text" name="modelo" id="modelo" class="w3-input"> <br>
+   <label for="tipoPlaca">Tipo da placa:</label>
+   <select id="tipoPlaca" class="w3-input">
+    <option value="mercosul">Mercosul (ABC1D23)</option>
+    <option value="antiga" selected>Placa Antiga (ABC-1234)</option>
+   </select> <br>
 
-    <label for="tipoPlaca">Tipo da placa:</label>
-    <select id="tipoPlaca" class="w3-input">
-     <option value="mercosul">Mercosul (ABC1D23)</option>
-     <option value="antiga" selected>Placa Antiga (ABC-1234)</option>
-    </select> <br>
+   <label for="placa" class="">Placa:</label>
+   <input type="text" id="placa" name="placa" placeholder="ABC-1234" maxlength="8" class="w3-margin-top w3-input">
+   <div id="feedback"></div><br>
 
-    <label for="placa" class="">Placa:</label>
-    <input type="text" id="placa" placeholder="ABC-1234" maxlength="8" class="w3-margin-top w3-input">
-    <div id="feedback"></div><br>
+   <label for="cor"> Cor: </label>
+   <input type="text" name="cor" id="cor" class="w3-input"> <br>
 
-    <label for="cor"> Cor: </label>
-    <input type="text" name="cor" id="cor" class="w3-input"> <br>
+   <label for="ano"> Ano: </label>
+   <input type="text" name="ano" id="ano" class="w3-input"> <br>
 
-    <label for="ano"> Ano: </label>
-    <input type="text" name="ano" id="ano" class="w3-input"> <br>
+   <button type="submit" id="cadastrar-veiculo" name="cadastrar-veiculo" class="w3-button w3-block w3-theme-l1 w3-margin-top w3-margin-bottom" disabled> Cadastrar veículo
+   </button>
+  </div>
+ </form>
 
-    <button type="submit" id="cadastrar-veiculo" class="w3-button w3-block w3-theme-l1 w3-margin-top" disabled> Cadastrar veículo
-    </button>
-   </form>
-  </fieldset>
- </div>
 
  <div class="w3-container w3-hide tela" id="login-cliente">
   <fieldset>
@@ -153,15 +148,18 @@
  <?php
  require "../includes/banco-dados.inc.php";
  require "../php/Cliente.php";
+ require "../php/Veiculo.php";
 
  $banco = new BancoDeDados('localhost', 'root', '', 'projeto_lavacao_prw2', 'clientes', 'veiculos', 'administradores');
  $cliente = new Cliente();
+ $veiculo = new Veiculo();
 
  $conexao = $banco->criarConexao();
  $banco->criarBanco($conexao);
  $banco->abrirBanco($conexao);
  $banco->definirCharset($conexao);
  $banco->criarTabelaClientes($conexao);
+ $banco->criarTabelaVeiculo($conexao);
 
  if (isset($_POST['cadastrar-cliente'])) {
   $cliente->receberDados($conexao);
@@ -170,6 +168,14 @@
          <h3 class='tela'> Cliente cadastrado com sucesso! </h3>
         </div>";
  }
+ if (isset($_POST['cadastrar-veiculo'])) {
+  $veiculo->receberDados($conexao);
+  $veiculo->create($conexao, $banco->nomeDaTabelaVeiculos);
+  echo "<div class='w3-container w3-center w3-round-xxlarge w3-border w3-theme-d1'>
+         <h3 class='tela'> Veículo cadastrado com sucesso! </h3>
+        </div>";
+ }
+
  ?>
 
  <footer class="w3-center">

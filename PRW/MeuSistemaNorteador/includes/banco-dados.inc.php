@@ -63,14 +63,14 @@ class BancoDeDados
 
  function criarTabelaVeiculo($conexao)
  {
-  $sql = "CREATE TABLE IF NOT EXISTS $this->nomeDaTabelaVeiculos(
-    ID int not null auto_increment,
+  $sql = "CREATE TABLE IF NOT EXISTS $this->nomeDaTabelaVeiculos (
+    ID int primary key not null auto_increment,
     fabricante varchar(300),
     modelo varchar(300),
     placa varchar(300),
     cor varchar(100),
-    ano char(4)
-    )ENGINE=innoDB;";
+    ano char(8)
+    ) ENGINE=innoDB;";
 
   $conexao->query($sql) or die($conexao->error);
  }
@@ -83,7 +83,7 @@ class BancoDeDados
     modelo varchar(300),
     placa varchar(300),
     cor varchar(100),
-    ano char(4)
+    ano char(8)
     )ENGINE=innoDB;";
 
   $conexao->query($sql) or die($conexao->error);
