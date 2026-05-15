@@ -26,44 +26,39 @@
   </nav>
  </div>
 
+ <form action="../index/index.php" method="post">
+  <div class="w3-container w3-hide tela w3-border" id="formulario-cliente">
+   <label for="nome"> Nome: </label>
+   <input type="text" name="nome" id="nome" class="w3-input"> <br>
 
- <div class="w3-container w3-hide tela" id="formulario-cliente">
-  <fieldset>
-   <legend> Cadastro de Cliente </legend>
-   <form action="index.php" method="post">
+   <label for="cpf"> Cpf: </label>
+   <input type="text" name="cpf" id="cpf" class="w3-input" value="___.___.___-__" maxlength="14"> <br>
 
-    <label for="nome"> Nome: </label>
-    <input type="text" name="nome" id="nome" class="w3-input"> <br>
+   <label for="email"> E-mail: </label>
+   <input type="email" name="email" id="email" class="w3-input"> <br>
 
-    <label for="cpf"> Cpf: </label>
-    <input type="text" name="cpf" id="cpf" class="w3-input" value="___.___.___-__" maxlength="14"> <br>
+   <label for="telefone"> Telefone: </label>
+   <input type="tel" name="telefone" id="telefone" class="w3-input "> <br>
 
-    <label for="email"> E-mail: </label>
-    <input type="email" name="email" id="email" class="w3-input"> <br>
+   <label for="rua"> Rua: </label>
+   <input type="text" name="rua" id="rua" class="w3-input "> <br>
 
-    <label for="telefone"> Telefone: </label>
-    <input type="tel" name="telefone" id="telefone" class="w3-input "> <br>
+   <label for="numero-endereco"> Número: </label>
+   <input type="text" name="numero-endereco" id="numero-endereco" class="w3-input"> <br>
 
-    <label for="rua"> Rua: </label>
-    <input type="text" name="rua" id="rua" class="w3-input "> <br>
+   <label for="cep"> CEP: </label>
+   <input type="text" name="cep" id="cep" class="w3-input" value="_____-___" maxlength="8"> <br>
 
-    <label for="numero-endereco"> Número: </label>
-    <input type="text" name="numero-endereco" id="numero-endereco" class="w3-input"> <br>
+   <label for="usuario"> Usuário: </label>
+   <input type="text" name="usuario" id="usuario" class="w3-input"><br>
 
-    <label for="cep"> CEP: </label>
-    <input type="text" name="cep" id="cep" class="w3-input" value="_____-___" maxlength="8"> <br>
+   <label for="senha"> Senha: </label>
+   <input type="password" name="senha" id="senha" class="w3-input"> <br>
 
-    <label for="usuario"> Usuário: </label>
-    <input type="text" name="usuario" id="usuario" class="w3-input"><br>
-
-    <label for="senha"> Senha: </label>
-    <input type="password" name="senha" id="senha" class="w3-input"> <br>
-
-    <button type="submit" id="cadastrar-cliente" name="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar cliente
-    </button>
-   </form>
-  </fieldset>
- </div>
+   <button type="submit" id="cadastrar-cliente" name="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Cadastrar cliente
+   </button>
+  </div>
+ </form>
 
  <div class="w3-container tela" id="home">
   <main>
@@ -118,10 +113,10 @@
    <legend> Login Cliente </legend>
    <form action="index.php">
     <label for="usuario"> Usuário: </label>
-    <input type="text" name="usuario" id="usuario" class="w3-input"><br>
+    <input type="text" name="usuario-login" id="usuario" class="w3-input"><br>
 
     <label for="senha"> Senha: </label>
-    <input type="password" name="senha" id="senha" class="w3-input"> <br>
+    <input type="password" name="senha-login" id="senha" class="w3-input"> <br>
 
     <button type="submit" id="login-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Fazer login </button>
 
@@ -134,10 +129,10 @@
    <legend> Login Administrador </legend>
    <form action="index.php">
     <label for="login"> Login: </label>
-    <input type="text" name="login" id="login" class="w3-input"><br>
+    <input type="text" name="adm-login" id="login" class="w3-input"><br>
 
     <label for="senha"> Senha: </label>
-    <input type="password" name="senha" id="senha" class="w3-input"> <br>
+    <input type="password" name="adm-senha" id="senha" class="w3-input"> <br>
 
     <button type="submit" id="login-admin" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Fazer login </button>
 
@@ -155,19 +150,6 @@
 
  </div>
 
-
- <footer class="w3-center">
-  <div class="w3-center tela"></div>
-  <p> Sitema feito por Guilherme Weber May no Curso Técnico de Desenvolvimento de Sistemas do Instituto Federal de
-   Santa Catarina - IFSC Campûs Florianópolis - Centro <br>
-   Copyright &copy;2025 - todos os direitos reservados. Proibida a reprodução parcial ou total do conteúdo presente
-   nesta aplicação <br>
-   Entre em contato conosco: <br>
-   <span onclick="navega('contato')"> Contato </span>
-  </p>
-  </div>
- </footer>
-
  <?php
  require "../includes/banco-dados.inc.php";
  require "../php/Cliente.php";
@@ -181,18 +163,31 @@
  $banco->definirCharset($conexao);
  $banco->criarTabelaClientes($conexao);
 
- if (isset($POST['cadastrar-cliente'])) {
-  echo "Chegou no IF cadastro cliente";
+ if (isset($_POST['cadastrar-cliente'])) {
   $cliente->receberDados($conexao);
   $cliente->create($conexao, $banco->nomeDaTabelaClientes);
-  echo"cadastrou";
+  echo "<div class='w3-container w3-center w3-round-xxlarge w3-border w3-theme-d1'>
+         <h3 class='tela'> Cliente cadastrado com sucesso! </h3>
+        </div>";
  }
  ?>
+
+ <footer class="w3-center">
+  <div class="w3-center tela"></div>
+  <p> Sitema feito por Guilherme Weber May no Curso Técnico de Desenvolvimento de Sistemas do Instituto Federal de
+   Santa Catarina - IFSC Campûs Florianópolis - Centro <br>
+   Copyright &copy;2025 - todos os direitos reservados. Proibida a reprodução parcial ou total do conteúdo presente
+   nesta aplicação <br>
+   Entre em contato conosco: <br>
+   <span onclick="navega('contato')"> Contato </span>
+  </p>
+  </div>
+ </footer>
+
 
  <script src="../js/valida-cpf-cep.js"></script>
  <script src="../js/valida-placa.js"></script>
  <script src="../js/telas.js"></script>
-
 </body>
 
 </html>

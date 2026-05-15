@@ -20,7 +20,7 @@ class Cliente
  function create($conexao, $nomeDaTabela)
  {
   $sql = "INSERT $nomeDaTabela VALUES(
-             null,
+            null,
             '$this->nome',
             '$this->cpf',
             '$this->email',
