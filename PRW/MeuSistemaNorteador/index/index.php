@@ -20,9 +20,9 @@
    <button class="w3-button" onclick="navega('home')"> Página Incial </button>
    <button class="w3-button" onclick="navega('formulario-cliente')"> Cadastro Cliente </button>
    <button class="w3-button" onclick="navega('formulario-veiculo')"> Cadastro Veículo </button>
-   <button class="w3-button" onclick="navega('contato')"> Contato </button>
    <button class="w3-button" onclick="navega('login-cliente')"> Login Cliente </button>
    <button class="w3-button" onclick="navega('login-administrador')"> Login Administrador </button>
+   <button class="w3-button" onclick="navega('contato')"> Contato </button>
   </nav>
  </div>
 
@@ -61,16 +61,16 @@
  </form>
 
  <div class="w3-container tela" id="home">
-   <h2 class="w3-center"> Caro(a) usuário, bem-vindo(a) </h2>
-   <p class="w3-center"> Este protótipo de aplicação web, simulando um sistema de lavação de automóveis, executa, entre
-    outros, as
-    seguintes operações: <br> <br>
-    a)Cadastrar clientes da aplicação; <br>
-    b)Cadastrar dados do veículo de cada cliente; <br>
-    c)Logar o cliente da aplicação <br>
-    d)Logar os administradores da aplicação; <br>
-    e)Outros serviços; <br>
-   </p>
+  <h2 class="w3-center"> Caro(a) usuário, bem-vindo(a) </h2>
+  <p class="w3-center"> Este protótipo de aplicação web, simulando um sistema de lavação de automóveis, executa, entre
+   outros, as
+   seguintes operações: <br> <br>
+   a)Cadastrar clientes da aplicação; <br>
+   b)Cadastrar dados do veículo de cada cliente; <br>
+   c)Logar o cliente da aplicação <br>
+   d)Logar os administradores da aplicação; <br>
+   e)Outros serviços; <br>
+  </p>
  </div>
 
  <form action="../index/index.php" method="post">
