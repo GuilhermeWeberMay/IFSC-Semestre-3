@@ -55,7 +55,8 @@
    <label for="senha"> Senha: </label>
    <input type="password" name="senha" id="senha" class="w3-input"> <br>
 
-   <button type="submit" id="cadastrar-cliente" name="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top w3-margin-bottom"> Cadastrar cliente
+   <button type="submit" id="cadastrar-cliente" name="cadastrar-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top w3-margin-bottom"
+    onclick="navega('resposta-forms-cliente')"> Cadastrar cliente
    </button>
   </div>
  </form>
@@ -134,6 +135,15 @@
    </form>
   </fieldset>
  </div>
+
+ <div class='w3-container w3-center w3-round-xxlarge w3-border w3-theme-d1 w3-hide tela' id="resposta-forms-cliente">
+  <h3> Cliente cadastrado com sucesso! </h3>
+ </div>
+
+ <div class='w3-container w3-center w3-round-xxlarge w3-border w3-theme-d1 w3-hide tela' id="resposta-forms-veiculo">
+  <h3> Veículo cadastrado com sucesso! </h3>
+ </div>
+
 
  <div class="w3-container w3-hide tela" id="contato">
   <fieldset>
