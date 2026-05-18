@@ -50,10 +50,10 @@ class BancoDeDados
              nome VARCHAR(300),
              cpf varchar(15),
              email VARCHAR(300),
-             telefone CHAR(11),
+             telefone CHAR(15),
              rua varchar (300),
              numero varchar(10),
-             cep char(8),
+             cep char(9),
              usuario varchar(100),
              senha varchar(128)
              ) ENGINE=innoDB;";

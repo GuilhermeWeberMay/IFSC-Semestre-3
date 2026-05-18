@@ -47,7 +47,7 @@ input.addEventListener('keydown', (e) => {
 const inputCep = document.getElementById('cep');
 
 inputCep.addEventListener('focus', () => {
- if (inputCep.value === '_____.___') {
+ if (inputCep.value === '_____-___') {
   inputCep.setSelectionRange(0, 0);
  }
 });
@@ -69,9 +69,9 @@ inputCep.addEventListener('keydown', (e) => {
  }
 
  // Máscara base
- let mascara = '_____.___'.split('');
+ let mascara = '_____-___'.split('');
 
- // Posições dos números no CPF
+ // Posições dos números no CEP
  const posicoes = [0, 1, 2, 3, 4, 6, 7, 8];
 
  numeros.split('').forEach((num, index) => {
@@ -86,4 +86,42 @@ inputCep.addEventListener('keydown', (e) => {
  if (proximo !== -1) {
   inputCep.setSelectionRange(proximo, proximo);
  }
+});
+
+const inputTelefone = document.getElementById('telefone');
+
+inputTelefone.addEventListener('focus', () => {
+  if (inputTelefone.value === '(__) _____-____') {
+    inputTelefone.setSelectionRange(0, 0);
+  }
+});
+
+inputTelefone.addEventListener('keydown', (e) => {
+  e.preventDefault();
+
+  let numeros = inputTelefone.value.replace(/\D/g, '').replace(/_/g, '');
+
+  if (e.key === 'Backspace') {
+    numeros = numeros.slice(0, -1);
+  }
+
+  if (/^\d$/.test(e.key) && numeros.length < 11) {
+    numeros += e.key;
+  }
+
+  let mascara = '(__) _____-____'.split('');
+  const posicoes = [1, 2, 5, 6, 7, 8, 9, 11, 12, 13, 14];
+
+  numeros.split('').forEach((num, index) => {
+    if (posicoes[index] !== undefined) {
+      mascara[posicoes[index]] = num;
+    }
+  });
+
+  inputTelefone.value = mascara.join('');
+
+  const proximo = inputTelefone.value.indexOf('_');
+  if (proximo !== -1) {
+    inputTelefone.setSelectionRange(proximo, proximo);
+  }
 });

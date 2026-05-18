@@ -38,7 +38,7 @@
    <input type="email" name="email" id="email" class="w3-input"> <br>
 
    <label for="telefone"> Telefone: </label>
-   <input type="tel" name="telefone" id="telefone" class="w3-input "> <br>
+   <input type="text" name="telefone" id="telefone" class="w3-input" value="(__) _____-____" maxlength="14">
 
    <label for="rua"> Rua: </label>
    <input type="text" name="rua" id="rua" class="w3-input "> <br>
