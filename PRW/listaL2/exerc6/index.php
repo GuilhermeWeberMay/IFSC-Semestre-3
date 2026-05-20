@@ -5,8 +5,32 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
- <link rel="stylesheet" href="style.css">
  <title> Exercício 6 </title>
+ <style>
+  body {
+   background-color: #F9F8F6;
+  }
+
+  div.titulo {
+   background-color: #D9CFC7;
+  }
+
+  button.cadastrar {
+   background-color: #C9B59C;
+  }
+
+  #formulario {
+   display: none;
+  }
+
+  caption {
+   background-color: #EFE9E3;
+  }
+
+  #excluidos {
+   color: red;
+  }
+ </style>
 </head>
 
 <body>
@@ -67,7 +91,17 @@
   $projeto->delete($conexao, $banco->nomeTabela);
  }
  ?>
- <script src="main.js"></script>
+ <script>
+  function tiraFormulario() {
+   document.getElementById("formulario").style.display = "none";
+   document.getElementById("resultados").style.display = "block";
+  }
+
+  function mostraFormulario() {
+   document.getElementById("formulario").style.display = "block";
+   document.getElementById("resultados").style.display = "none";
+  }
+ </script>
 </body>
 
 </html>
