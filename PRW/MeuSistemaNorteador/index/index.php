@@ -114,7 +114,7 @@
     <label for="senha"> Senha: </label>
     <input type="password" name="senha-login" id="senha" class="w3-input"> <br>
 
-    <button type="submit" id="login-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top"> Fazer login </button>
+    <button type="submit" id="login-cliente" class="w3-button w3-block w3-theme-l1 w3-margin-top" name="login-cliente"> Fazer login </button>
 
    </form>
   </fieldset>
@@ -186,6 +186,8 @@
         </div>";
  }
 
+ if (isset($_POST['login-cliente']))
+  $cliente->login($conexao, $banco->nomeDaTabelaClientes);
  ?>
 
  <footer class="w3-center">

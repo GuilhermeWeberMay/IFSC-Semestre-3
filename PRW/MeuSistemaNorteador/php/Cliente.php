@@ -33,4 +33,26 @@ class Cliente
 
   $conexao->query($sql) or die($conexao->error);
  }
+
+ function login ($conexao, $nomeDaTabela){
+  $login = trim($conexao->escape_string($_POST['usuario-login']));
+  $senha = trim($conexao->escape_string($_POST['senha-login']));
+
+  // Vamos buscar a senha do usuário, no banco, que já está criptografada. Para isso, pesquisamos, antes, pelo nome de usuário no banco
+
+  $sql = "SELECT senha FROM $nomeDaTabela WHERE usuario='$login';";
+  $resultado = $conexao->query($sql) or die ($conexao->error);
+
+  $senhaBanco = false;
+
+  if($conexao->affected_rows != 0){
+   // Entrando neste bloco significa que o banco encontrou o usuário registrado no banco
+   $vetorRegistro = $resultado->fetch_array();
+   $senhaCriptografada = $vetorRegistro[0];
+
+   // Agora vamos solicitar ao PHP se a senha regular e a senha criptografada são iguais
+   $senhaBanco = password_verify($senha, $senhaCriptografada);
+  }
+
+ }
 }
