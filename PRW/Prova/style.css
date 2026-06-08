@@ -1,0 +1,9 @@
+body{
+background-color: lightgrey;
+}
+
+fieldset{
+border-radius: 20px;
+color: black;
+border-color: white;
+}

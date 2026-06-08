@@ -5,6 +5,8 @@
  <meta charset='utf-8'>
  <meta name='viewport' content='width=device-width, initial-scale=1'>
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+ <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-grey.css">
+ <link rel="stylesheet" href="style.css">
  <title> GWM Games </title>
  <?php
  require "banco.php";
@@ -19,7 +21,7 @@
 </head>
 
 <body>
- <div class="w3-container w3-center w3-border w3-margin-bottom">
+ <div class="w3-container w3-center w3-border w3-margin-bottom w3-theme-dark">
   <h1 class=""> GWM GamingHouse </h1>
  </div>
 
@@ -40,7 +42,7 @@
      <option value="AVENTURA"> Aventura </option>
     </select><br>
 
-    <button class="w3-button w3-border w3-round-xxlarge w3-margin-top w3-margin-bottom w3-hover-green w3-bold w3-italic" name="cadastrar" type="submit"> Cadastrar
+    <button class="w3-button w3-border w3-round-xxlarge w3-margin-top w3-margin-bottom w3-hover-yellow w3-bold w3-italic w3-yellow" name="cadastrar" type="submit"> Cadastrar
      jogo</button>
    </fieldset>
   </div>
@@ -67,7 +69,7 @@
     <label for="preco-atualizado"> Preço: </label>
     <input type="number" name="preco-atualizado" id="preco-atualizado" min="0" max="500" step="0.01"> <br>
 
-    <button class="w3-button w3-border w3-round-xxlarge w3-margin-top w3-margin-bottom w3-hover-green w3-bold w3-italic"
+    <button class="w3-button w3-border w3-round-xxlarge w3-margin-top w3-margin-bottom w3-hover-yellow w3-bold w3-italic w3-yellow"
      name="atualizar"> Atualizar
      jogo</button>
 
@@ -81,7 +83,7 @@
  ?>
  <form action="index.php" method="post">
   <div class="w3-container w3-center">
-   <button type="submit" name="media" class="w3-button w3-border w3-round-xxlarge w3-margin-top w3-margin-bottom w3-hover-green"> Visualizar média dos valores </button>
+   <button type="submit" name="media" id="botao" class="w3-button w3-round-xxlarge w3-margin-top w3-margin-bottom w3-border w3-yellow"> Visualizar média dos valores </button>
   </div>
  </form>
  <?php
