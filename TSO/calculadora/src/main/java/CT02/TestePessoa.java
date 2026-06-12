@@ -2,7 +2,7 @@ package CT02;
 
 import org.junit.jupiter.api.Test;
 
-public class PessoaTeste {
+public class TestePessoa {
     Pessoa p = new Pessoa(123L,"Guilherme", "Weber May", "24/10/2006");
     @Test
     void teste() {
