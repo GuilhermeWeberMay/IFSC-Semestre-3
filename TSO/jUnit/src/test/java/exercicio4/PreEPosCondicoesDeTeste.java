@@ -1,7 +1,7 @@
 package exercicio4;
 
-import org.junit.*;
-
+import org.junit.*
+;
 
 public class PreEPosCondicoesDeTeste {
     @Before

@@ -16,7 +16,7 @@
   <main>
    <?php
     require "../includes/criar-classe-conexao.inc.php";
-    require "../includes/criar-classe-clientes.inc.php";
+    require "../includes/criar-classe-veiculos.inc.php";
 
     $objBanco = new BancoDeDados("localhost", "root", "", "Sistema_lavacao", "clientes", "veiculos", "administrador");
     $conexao = $objBanco->criarConexao();
@@ -26,16 +26,16 @@
     $objBanco->criarTabelaClientes($conexao);
     $objBanco->criarTabelaVeiculos($conexao);
 
-    $objCliente = new Clientes();
-    $objCliente->receberDadosForm($conexao);
-    $objCliente->cadastrar($conexao, $objBanco->nomeDaTabelaClientes);
+    $objVeiculo = new Veiculos();
+    $objVeiculo->receberDadosForm($conexao);
+    $objVeiculo->cadastrar($conexao, $objBanco->nomeDaTabelaVeiculos);
     $objBanco->terminarConexao($conexao);
    ?>
 
-   <p> Cliente cadastrado com sucesso! </p>
+   <p> Veículo cadastrado com sucesso! </p>
 
-   <form action="../html/cadastro-cliente.html" method="post">
-    <button> Cadastrar outro cliente </button>
+   <form action="../html/cadastro-veiculo.html" method="post">
+    <button> Cadastrar outro veículo </button>
    </form>
   </main>
 </body> 
